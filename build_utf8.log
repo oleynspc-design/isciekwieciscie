@@ -1,0 +1,87 @@
+﻿
+> isciekwieciscie@0.1.0 build
+> next build
+
+  Ôľ▓ Next.js 14.2.3
+
+   Creating an optimized production build ...
+node.exe : Failed to compile
+.
+At C:\Program Files\nodejs\n
+pm.ps1:29 char:3
++   & $NODE_EXE $NPM_CLI_JS 
+$args
++   ~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~
+    + CategoryInfo          
+    : NotSpecified: (Faile  
+  d to compile.:String) [   
+ ], RemoteException
+    + FullyQualifiedErrorId 
+    : NativeCommandError
+ 
+
+./app/page.tsx
+Error: 
+  [31mx[0m Expression expe
+cted
+    ,-[[36;1;4mC:\Users\ole
+jn\CascadeProjects\isciekwie
+ciscie\app\page.tsx[0m:5:1]
+ [2m 5[0m | 
+ [2m 6[0m | export default
+ function HomePage() {
+ [2m 7[0m |   return (
+ [2m 8[0m |     <>
+    : [31;1m     ^[0m
+ [2m 9[0m |       <section
+ className="relative h-[600p
+x] md:h-[700px] flex items-c
+enter justify-center bg-grad
+ient-to-br from-primary-50 t
+o-accent-50">
+ [2m10[0m |         <div c
+lassName="absolute inset-0 b
+g-black/10"></div>
+ [2m11[0m |         <div c
+lassName="relative z-10 max-
+w-4xl mx-auto px-4 text-cent
+er">
+    `----
+
+  [31mx[0m Expected ',', g
+ot 'className'
+    ,-[[36;1;4mC:\Users\ole
+jn\CascadeProjects\isciekwie
+ciscie\app\page.tsx[0m:34:1
+]
+ [2m34[0m |         </div>
+ [2m35[0m |       </sectio
+n>
+ [2m36[0m | 
+ [2m37[0m |       <section
+ className="py-20 bg-white">
+    : [31;1m               
+^^^^^^^^^[0m
+ [2m38[0m |         <div c
+lassName="max-w-7xl mx-auto 
+px-4 sm:px-6 lg:px-8">
+ [2m39[0m |           <div
+ className="text-center mb-1
+6">
+ [2m40[0m |             <h
+2 className="font-display te
+xt-3xl md:text-4xl font-bold
+ text-gray-900 mb-4">
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested m
+odule:
+./app/page.tsx
+
+
+> Build failed because of we
+bpack errors
