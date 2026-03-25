@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Inter, Playfair_Display, Cormorant_Garamond } from 'next/font/google';
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -14,7 +14,15 @@ const inter = Inter({
 
 const playfair = Playfair_Display({ 
   subsets: ["latin"],
+  weight: ['400', '500', '600', '700', '800'],
   variable: '--font-playfair',
+  display: 'swap',
+});
+
+const cormorant = Cormorant_Garamond({ 
+  subsets: ["latin"],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-cormorant',
   display: 'swap',
 });
 
@@ -121,7 +129,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="pl" className={`${inter.variable} ${playfair.variable}`}>
+    <html lang="pl">
       <head>
         <GoogleAnalytics />
         <script
@@ -129,7 +137,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={inter.className}>
+      <body className={`${inter.variable} ${playfair.variable} ${cormorant.variable} antialiased`}>
         <Navbar />
         <main className="min-h-screen">
           {children}

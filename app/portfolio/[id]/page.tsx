@@ -15,39 +15,48 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="bg-gradient-to-br from-primary-50 to-accent-50 py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative py-12 overflow-hidden">
+        <div className="absolute inset-0 elegant-image-border rounded-none">
+          <Image
+            src={project.images[0]}
+            alt={project.title}
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-bottle-900/85 to-bottle-700/75"></div>
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link 
             href="/portfolio" 
-            className="inline-flex items-center text-primary-600 hover:text-primary-700 font-medium mb-6"
+            className="inline-flex items-center text-white hover:text-accent-400 font-medium mb-6 drop-shadow-lg"
           >
             <ArrowLeft className="h-5 w-5 mr-2" />
             Powrót do portfolio
           </Link>
-          <h1 className="font-display text-3xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h1 className="font-display text-3xl md:text-5xl font-bold text-white mb-4 drop-shadow-2xl">
             {project.title}
           </h1>
-          <div className="flex flex-wrap gap-4 text-gray-700">
+          <div className="flex flex-wrap gap-4 text-white/95 drop-shadow-lg">
             {project.location && (
               <div className="flex items-center">
-                <MapPin className="h-5 w-5 mr-2 text-primary-600" />
+                <MapPin className="h-5 w-5 mr-2 text-accent-400" />
                 <span>{project.location}</span>
               </div>
             )}
             {project.area && (
               <div className="flex items-center">
-                <Ruler className="h-5 w-5 mr-2 text-primary-600" />
+                <Ruler className="h-5 w-5 mr-2 text-accent-400" />
                 <span>{project.area}</span>
               </div>
             )}
             {project.duration && (
               <div className="flex items-center">
-                <Clock className="h-5 w-5 mr-2 text-primary-600" />
+                <Clock className="h-5 w-5 mr-2 text-accent-400" />
                 <span>{project.duration}</span>
               </div>
             )}
             <div className="flex items-center">
-              <Calendar className="h-5 w-5 mr-2 text-primary-600" />
+              <Calendar className="h-5 w-5 mr-2 text-accent-400" />
               <span>{new Date(project.createdAt).toLocaleDateString('pl-PL')}</span>
             </div>
           </div>
@@ -58,7 +67,7 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
         <div className="grid lg:grid-cols-3 gap-12">
           <div className="lg:col-span-2">
             <div className="mb-8">
-              <h2 className="font-display text-2xl font-bold text-gray-900 mb-4">
+              <h2 className="font-display text-2xl font-bold text-gray-900 mb-4 title-separator">
                 Opis projektu
               </h2>
               <p className="text-gray-700 text-lg leading-relaxed mb-4">
@@ -73,7 +82,7 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
 
             {project.beforeAfterImages && (
               <div className="mb-8">
-                <h2 className="font-display text-2xl font-bold text-gray-900 mb-4">
+                <h2 className="font-display text-2xl font-bold text-gray-900 mb-4 title-separator">
                   Przed i po
                 </h2>
                 <div className="grid md:grid-cols-2 gap-6">
@@ -106,7 +115,7 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
             )}
 
             <div className="mb-8">
-              <h2 className="font-display text-2xl font-bold text-gray-900 mb-4">
+              <h2 className="font-display text-2xl font-bold text-gray-900 mb-4 title-separator">
                 Galeria zdjęć
               </h2>
               <div className="grid md:grid-cols-2 gap-4">
@@ -127,7 +136,7 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
 
           <div className="lg:col-span-1">
             <div className="bg-white rounded-2xl p-6 shadow-md sticky top-24">
-              <h3 className="font-display text-xl font-bold text-gray-900 mb-4">
+              <h3 className="font-display text-xl font-bold text-gray-900 mb-4 title-separator">
                 Szczegóły projektu
               </h3>
               

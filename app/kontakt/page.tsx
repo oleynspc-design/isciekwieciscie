@@ -61,12 +61,12 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="bg-gradient-to-br from-primary-50 to-accent-50 py-16">
+      <div className="elegant-gradient py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="font-display text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h1 className="font-display text-4xl md:text-5xl font-bold text-bottle-800 mb-4 text-center title-separator inline-block">
             Kontakt
           </h1>
-          <p className="text-lg text-gray-700 max-w-2xl">
+          <p className="text-lg text-gray-700 text-center max-w-2xl mx-auto">
             Skontaktuj się z nami - chętnie odpowiemy na wszystkie pytania
           </p>
         </div>
@@ -74,8 +74,8 @@ export default function ContactPage() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid md:grid-cols-2 gap-12">
-          <div>
-            <h2 className="font-display text-2xl font-bold text-gray-900 mb-6">
+          <div className="elegant-card p-8">
+            <h2 className="font-display text-2xl font-bold text-bottle-800 mb-6 title-separator">
               Wyślij wiadomość
             </h2>
 
@@ -88,7 +88,7 @@ export default function ContactPage() {
                   {...register('name')}
                   type="text"
                   id="name"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-bottle-500 focus:border-transparent"
                   placeholder="Jan Kowalski"
                 />
                 {errors.name && (
@@ -104,7 +104,7 @@ export default function ContactPage() {
                   {...register('email')}
                   type="email"
                   id="email"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-bottle-500 focus:border-transparent"
                   placeholder="jan@example.com"
                 />
                 {errors.email && (
@@ -120,7 +120,7 @@ export default function ContactPage() {
                   {...register('phone')}
                   type="tel"
                   id="phone"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-bottle-500 focus:border-transparent"
                   placeholder="+48 123 456 789"
                 />
                 {errors.phone && (
@@ -135,7 +135,7 @@ export default function ContactPage() {
                 <select
                   {...register('serviceType')}
                   id="serviceType"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-bottle-500 focus:border-transparent"
                 >
                   <option value="">Wybierz usługę</option>
                   <option value="ogrody">Projektowanie ogrodów</option>
@@ -157,7 +157,7 @@ export default function ContactPage() {
                   {...register('message')}
                   id="message"
                   rows={6}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent resize-none"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-bottle-500 focus:border-transparent resize-none"
                   placeholder="Opisz swój projekt lub zadaj pytanie..."
                 />
                 {errors.message && (
@@ -166,21 +166,20 @@ export default function ContactPage() {
               </div>
 
               {submitStatus === 'success' && (
-                <div className="bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg">
-                  Dziękujemy! Wiadomość została wysłana. Skontaktujemy się wkrótce.
+                <div className="bg-bottle-50 border border-bottle-200 text-bottle-800 px-6 py-4 rounded-lg">
+                  Dziękujemy za wiadomość! Skontaktujemy się z Tobą wkrótce.
                 </div>
               )}
-
               {submitStatus === 'error' && (
-                <div className="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg">
-                  Wystąpił błąd. Spróbuj ponownie lub skontaktuj się bezpośrednio.
+                <div className="bg-red-50 border border-red-200 text-red-800 px-6 py-4 rounded-lg">
+                  Wystąpił błąd. Spróbuj ponownie lub skontaktuj się z nami bezpośrednio.
                 </div>
               )}
 
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-primary-600 text-white px-8 py-4 rounded-full hover:bg-primary-700 transition-colors font-semibold text-lg inline-flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
+                className="elegant-button w-full bg-bottle-600 text-white hover:bg-bottle-700 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
               >
                 {isSubmitting ? 'Wysyłanie...' : 'Wyślij wiadomość'}
                 <Send className="ml-2 h-5 w-5" />
@@ -188,19 +187,19 @@ export default function ContactPage() {
             </form>
           </div>
 
-          <div>
-            <h2 className="font-display text-2xl font-bold text-gray-900 mb-6">
+          <div className="elegant-card p-8">
+            <h2 className="font-display text-2xl font-bold text-bottle-800 mb-6 title-separator">
               Dane kontaktowe
             </h2>
 
             <div className="space-y-6 mb-8">
               <div className="flex items-start">
                 <div className="bg-primary-100 p-3 rounded-lg mr-4">
-                  <Mail className="h-6 w-6 text-primary-600" />
+                  <Mail className="h-6 w-6 text-bottle-600" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
-                  <a href="mailto:kontakt@isciekwieciscie.pl" className="text-gray-600 hover:text-primary-600">
+                  <a href="mailto:kontakt@isciekwieciscie.pl" className="text-gray-600 hover:text-bottle-600">
                     kontakt@isciekwieciscie.pl
                   </a>
                 </div>
@@ -208,11 +207,11 @@ export default function ContactPage() {
 
               <div className="flex items-start">
                 <div className="bg-primary-100 p-3 rounded-lg mr-4">
-                  <Phone className="h-6 w-6 text-primary-600" />
+                  <Phone className="h-6 w-6 text-bottle-600" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-1">Telefon</h3>
-                  <a href="tel:+48123456789" className="text-gray-600 hover:text-primary-600">
+                  <a href="tel:+48123456789" className="text-gray-600 hover:text-bottle-600">
                     +48 123 456 789
                   </a>
                 </div>
@@ -220,7 +219,7 @@ export default function ContactPage() {
 
               <div className="flex items-start">
                 <div className="bg-accent-100 p-3 rounded-lg mr-4">
-                  <Instagram className="h-6 w-6 text-accent-600" />
+                  <Instagram className="h-6 w-6 text-bottle-600" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-1">Instagram</h3>
@@ -237,7 +236,7 @@ export default function ContactPage() {
 
               <div className="flex items-start">
                 <div className="bg-primary-100 p-3 rounded-lg mr-4">
-                  <MapPin className="h-6 w-6 text-primary-600" />
+                  <MapPin className="h-6 w-6 text-bottle-600" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-1">Lokalizacja</h3>

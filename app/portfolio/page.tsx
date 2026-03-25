@@ -24,13 +24,13 @@ export default function PortfolioPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="bg-gradient-to-br from-primary-50 to-accent-50 py-16">
+      <div className="elegant-gradient py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="font-display text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h1 className="font-display text-4xl md:text-5xl font-bold text-bottle-800 mb-4 text-center title-separator inline-block">
             Portfolio
           </h1>
-          <p className="text-lg text-gray-700 max-w-2xl">
-            Zobacz nasze zrealizowane projekty - od ogrodów po florystykę i aranżacje roślin
+          <p className="text-lg text-gray-700 text-center max-w-2xl mx-auto">
+            Odkryj nasze realizacje - ogrody, florystyka i aranżacje roślin
           </p>
         </div>
       </div>
@@ -45,10 +45,10 @@ export default function PortfolioPage() {
             <button
               key={cat.value}
               onClick={() => setSelectedCategory(cat.value)}
-              className={`px-6 py-2 rounded-full font-medium transition-all ${
+              className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
                 selectedCategory === cat.value
-                  ? 'bg-primary-600 text-white shadow-md'
-                  : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
+                  ? 'bg-bottle-600 text-white shadow-lg scale-105'
+                  : 'bg-white text-gray-700 hover:bg-bottle-50 border border-gray-200 hover:border-bottle-300'
               }`}
             >
               {cat.label}
@@ -61,9 +61,9 @@ export default function PortfolioPage() {
             <Link
               key={project.id}
               href={`/portfolio/${project.id}`}
-              className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow"
+              className="elegant-card overflow-hidden group"
             >
-              <div className="aspect-square bg-gray-200 relative">
+              <div className="aspect-square bg-gray-200 relative elegant-image-border rounded-t-2xl">
                 <Image
                   src={project.images[0]}
                   alt={project.title}
@@ -75,10 +75,10 @@ export default function PortfolioPage() {
                 <div className="flex items-center gap-2 mb-2">
                   <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
                     project.category === 'ogrody'
-                      ? 'bg-primary-100 text-primary-700'
+                      ? 'bg-bottle-100 text-bottle-700'
                       : project.category === 'florystyka'
                       ? 'bg-accent-100 text-accent-700'
-                      : 'bg-gray-100 text-gray-700'
+                      : 'bg-bottle-50 text-bottle-600'
                   }`}>
                     {project.category === 'ogrody' ? 'Ogrody' : 
                      project.category === 'florystyka' ? 'Florystyka' : 'Kombinacja'}
@@ -87,7 +87,7 @@ export default function PortfolioPage() {
                     <span className="text-xs text-gray-500">📍 {project.location}</span>
                   )}
                 </div>
-                <h3 className="font-display text-xl font-bold text-gray-900 mb-2">
+                <h3 className="font-display text-xl font-bold text-bottle-800 mb-2 group-hover:text-bottle-600 transition-colors title-separator">
                   {project.title}
                 </h3>
                 <p className="text-gray-600 line-clamp-2 mb-3">
